@@ -71,8 +71,9 @@ var config = {
     var timeRemaining = timeDiff % trainFreq;
     var trainMinsAway = trainFreq - timeRemaining;
     var trainNext = moment().add(trainMinsAway, "minutes");
+    var trainNextTime = moment(trainNext).format("hh:mm A");
     
     // Add each train's data into the table
     $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" +
-    trainFreq + "</td><td>" + trainNext + "</td><td>" + trainMinsAway + "</td></tr>");
+    trainFreq + "</td><td>" + trainNextTime + "</td><td>" + trainMinsAway + "</td></tr>");
   });
